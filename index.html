@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ophy's To-Do List PWA</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1>Ophy's To-Do List</h1>
+    <input type="text" id="todo-input" placeholder="Add a new task..." />
+    <button onclick="addTask()">Add</button>
+    <ul id="todo-list">
+      <!-- Tasks will go here -->
+    </ul>
+
+    <script src="app.js"></script>
+    <script>
+      function addTask() {
+        var input = document.getElementById("todo-input");
+        var newTask = input.value;
+        if (newTask) {
+          var listItem = document.createElement("li");
+          listItem.textContent = newTask;
+          document.getElementById("todo-list").appendChild(listItem);
+          input.value = ""; // Clear the input
+        }
+      }
+    </script>
+  </body>
+</html>
